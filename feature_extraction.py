@@ -99,7 +99,7 @@ def extract_features(path, output_root):
             for i, image_path in enumerate(video_images):
                 image = Image.open(image_path).convert('RGB')
                 preprocessed_image = pre_transforms(image).unsqueeze(0)
-                ##  GPT
+                ## data to cuda
                 preprocessed_image = preprocessed_image.to(device)
                 ##############
                 dnn_repr = model(preprocessed_image)
